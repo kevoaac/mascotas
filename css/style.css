@@ -1,0 +1,416 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Kanit', sans-serif;
+    /* background-color: #edf6f9; */
+    
+    
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+header{
+    /*flex: los elementos se muestran de manera horizontal*/
+    display: flex;
+    min-height: 50px;
+    background-color: darkcyan;
+    justify-content: space-between;
+    align-items: center;
+
+    position: fixed;
+    width: 100%;
+    z-index:1;
+}
+a.logo {
+    display: flex;
+    align-items: center;
+
+    padding-left: 20px;
+}
+
+
+a.logo h2{
+    font-size: 20px;
+}
+
+a.logo img {
+    height: 40px;
+    padding-bottom: 6px;
+    margin-left: 1vw;
+
+}
+
+nav{
+    padding-right: 1vw;
+}
+nav a {
+    font-weight: 300;
+    padding-right: 20px;
+}
+
+nav a:hover {
+    color: whitesmoke;
+    transition: all 0.3s;
+}
+
+
+
+/*SECCION 1*/
+
+/*IMAGEN DE FONDO*/
+/* body{
+    --bg-image: url(img/perroygato2.png);
+    --bg-image-opacity:.2;
+    
+     
+}
+body::after{
+    content: '';
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+
+    opacity: var(--bg-image-opacity);
+    background-image: var(--bg-image);
+    background-size: 80px;
+    
+}  */
+
+body{
+
+    background-size:80px ;
+
+}
+
+
+main{
+    background-color: rgba(255, 250, 250, .8) ;
+    padding-top: 50px;/*Para falsear espacio que tapa el header*/
+} 
+
+
+
+
+  
+/*----------------------------------------*/
+
+section{
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center;
+
+}
+
+.seccion1{
+    
+    display: flex;
+    background-color: #edf6f9; ;
+    max-width: 65%;
+    padding: 20px;
+    
+}
+
+.intro{ 
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+
+}
+.intro h1{
+    font-size: 35px;
+    padding: 20px 30px 10px 30px;
+}
+.intro p{
+    font-size: 22px;
+    padding: 0 50px 0 30px ;
+}
+
+
+.imgIntro{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.imgIntro img{
+    width: 300px;
+    height: 440px;
+    object-fit: cover;
+    border-radius: 15px;
+
+    object-position:-310px center;
+    
+    margin-right: 30px;
+    
+}
+
+
+
+
+
+
+/*SECCION 2*/
+.seccion2{
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px ;
+    background-color: #edf6f9; 
+    max-width: 65%;
+    
+}
+.tituloGaleria{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.tituloGaleria h2{
+    padding: 0;
+}
+.tituloGaleria h3{
+    font-size: 15px;
+    padding: 0 0 10px 0;
+}
+
+.tituloGaleria button{
+    
+    display: inline-block;
+    position: relative;
+    background: none;
+    border: none;
+    font-family: 'Kanit', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: #fff;
+    
+    cursor: pointer;
+    margin: 20px 10px;
+    background-color: #ffddd2;
+}
+
+.tituloGaleria a{
+    display: block;
+    padding: 25px 50px;
+}
+
+/*ANIMACIONES boton*/
+button::before,
+button::after {
+    content: "";
+    width: 0;
+    height: 4px;
+    position: absolute;
+    transition: all 0.2s linear;
+    background: #e29578;
+}
+
+/*Movimiento de lados*/
+a::before,
+a::after {
+    content: "";
+    width: 4px;
+    height: 0;
+    position: absolute;
+    transition: all 0.2s linear;
+    background: #e29578;
+
+}
+
+
+button:hover::before,
+/*Before: Movimiento de izquierda a derecha*/
+button:hover::after {
+    width: 100%;
+}
+
+button:hover a::before,
+button:hover a::after {
+    height: 100%;
+}
+
+
+/*Tiempos que tarda las transiciones*/
+button::after {
+    right: 0;
+    bottom: 0;
+    transition-duration: 0.3s;
+}
+
+button a::after {
+    right: 0;
+    bottom: 0;
+    transition-duration: 0.3s;
+}
+
+button::before {
+    left: 0;
+    top: 0;
+    transition-duration: 0.3s;
+}
+
+button a::before {
+    left: 0;
+    top: 0;
+    transition-duration: 0.3s;
+}
+
+
+
+
+
+/*----------------*/
+
+
+
+.tituloGaleria p{
+    padding: 0 30px;
+}
+
+
+
+
+/*GALERIA DE IMAGENES*/
+
+.galeria{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 95%;
+    margin: 20px 10px;
+    gap: 20px;
+    
+    overflow: hidden;
+    
+}
+.imgGaleria{
+    width: 100%;
+    vertical-align: top;
+    height: 210px;
+    object-fit: cover;
+
+    border-radius: 5px;
+
+}
+
+
+
+
+
+/* FOOTER------------------------------------------------------------------------------------------------------------------- */
+
+footer{
+    background: darkcyan;
+    display: grid;
+    grid-template-columns: 1fr 0.5fr 1fr;
+   
+
+}
+.contacto{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    padding: 0 2rem 0 20rem;
+}
+.contacto span{
+    line-height: 2rem;
+    font-size: 1rem;
+}
+
+.logofooter{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.logofooter img{
+    width: 60px;
+}
+.logofooter h2{
+    font-weight: lighter;
+    font-size: 1rem;
+}
+
+.redes{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    padding: 0 20rem 0 2rem;
+    margin: 1rem 0;
+}
+
+.redes i{
+    font-size: 1rem;
+}
+
+
+
+
+/*Adaptarse a pantallas de movil/pequeñas-----------------------------------------------------------------------------------------*/
+@media (max-width:700px) {
+    header {
+        flex-direction: column;
+        /* justify-content: center;
+        align-items: center; */
+    }
+    a.logo{
+        padding: 0;
+    }
+    nav a{
+        padding: 0 10px;
+    }
+
+    nav {
+        padding: 0 0 10px 0;
+    }
+
+    
+    .imgIntro img{
+        width: 200px;
+        height: 340px;
+        object-position:-250px center;
+        margin-top: 30px;
+        margin-right: 20px;
+
+    }
+
+    .intro h1{
+        font-size: 25px;
+        
+    }
+    .intro p{
+        font-size: 20px;
+        
+    }
+
+
+    .seccion1{
+        max-width: 100%;
+    }
+    .seccion2{
+        max-width: 100%;
+    }
+
+
+
+
+
+    .galeria{
+        grid-template-columns: repeat(2, 1fr);
+        
+        
+    }
+
+}
